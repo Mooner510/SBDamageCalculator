@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>SB Damage Calculator</title>
+		<link rel="stylesheet" href="index.css">
+		<link rel="stylesheet" href="css/size.css">
+		<script type="text/javascript" src="scripts/index.js" defer></script>
+	</head>
+	<body>
+		<div class="container">
+			<div>
+				<button type="submit" id="calc" style="display: block;">Calculate</button>
+			</div>
+			<div style="text-align: center; color: #fff; font-weight: bold; font-size: large;">
+				<span><button type="submit" id="reload" style="padding: 0.15em 0.4em;">Reload</button></span>
+				<span>Player Name: <input type="text" id="playerName" placeholder="닉네임" required=true></span>
+				<span id="profiletext">Profile: <select name="Profile" id="profile" onchange="fo()" style="line-height: 0;"></select></span>
+				<span id="weapontext">Weapon: <select name="Weapon" id="weapon" style="line-height: 0;"></select></span>
+				<span><button type="submit" id="apply" style="padding: 0.15em 0.4em;">Apply</button></span>
+			</div>
+			<div class="flex">
+				<div class="b1">
+					<p style="text-align: center; font-size: 21px;">《 Default Stats 》</p>
+					<p>Damage: <input type="number" id="defdamage" class="data" min=0 value=0 required=true></p>
+					<p>Strength: <input type="number" id="defstrength" class="data" min=0 value=0 required=true></p>
+					<p>Crit Damage: <input type="number" id="defcrit_damage" class="data" min=0 value=0 required=true></p>
+					<p>Health: <input type="number" id="defhealth" class="data" min=0 value=0 required=true></p>
+					<p>Combat Level: <input type="number" id="combatlevel" class="data" min=0 value=0 required=true></p>
+				</div>
+				<div class="blank"></div>
+				<div class="b1">
+					<p style="text-align: center; font-size: 21px;">《 Weapon Stats 》</p>
+					<p>Damage: <input type="number" id="damage" class="data" min=0 value=0 required=true></p>
+					<p>Strength: <input type="number" id="strength" class="data" min=0 value=0 required=true></p>
+					<p>Crit Damage: <input type="number" id="crit_damage" class="data" min=0 value=0 required=true></p>
+					<p>Health: <input type="number" id="health" class="data" min=0 value=0 required=true></p>
+				</div>
+				<div class="blank"></div>
+				<div class="blank"></div>
+				<div>
+					<p style="text-align: center; font-size: 21px; line-height: 10px;">《 Enchantments 》</p>
+					<div class="flex">
+						<div class="b2">
+							<p>Bane of Arthropods: <input type="number" id="bane_of_arthropods" class="data" min=0 max=8 value=0 size=0.5 required=true></p>
+							<p>Cubism: <input type="number" id="cubism" class="data" max=8 min=0 value=0 required=true></p>
+							<p>Dragon Hunter: <input type="number" id="dragon_hunter" class="data" min=0 value=0 required=true></p>
+							<p>Ender Slayer: <input type="number" id="ender_slayer" class="data" max=8 min=0 value=0 required=true></p>
+							<p>Execute: <input type="number" id="execute" class="data" min=0 value=0 required=true></p>
+						</div>
+						<div class="blank"></div>
+						<div class="b3">
+							<p>First Strike: <input type="number" id="first_strike" class="data" min=0 value=0 required=true></p>
+							<p>Giant Killer: <input type="number" id="giant_killer" class="data" min=0 value=0 required=true></p>
+							<p>Impaling: <input type="number" id="impaling" class="data" min=0 value=0 required=true></p>
+							<p>Prosecute: <input type="number" id="prosecute" class="data" min=0 value=0 required=true></p>
+							<p>Sharpness: <input type="number" id="sharpness" class="data" min=0 max=8 value=0 required=true></p>
+							<p>Smite: <input type="number" id="smite" class="data" min=0 max=8 value=0 required=true></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<p style="text-align: center;">
+				<span style="color: rgb(122, 26, 26);">Mob</span> Type: <select name="Mob Type" id="mobType" style="line-height: 0;"></select>&emsp;&emsp;&emsp;
+				<span style="color: rgb(122, 26, 26);">Mob</span> Health / Max Health: <input type="number" id="hp" class="data" min=0 value=0 required=true><span style="color: rgb(122, 26, 26);">HP</span> / <input type="number" id="hpL" class="data" min=0 value=0 required=true><span style="color: rgb(122, 26, 26);">HP</span>
+			</p>
+			<div class="block">
+				<div id="resultc" class="keys">
+					<strong id=result class="keys"></strong>
+					<br/>
+					<strong id=resultCrit class="keys"></strong>
+					<br/>
+					<strong id=resultOFA class="keys"></strong>
+					<br/>
+					<strong id=resultOFACrit class="keys"></strong>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
