@@ -202,7 +202,7 @@ function done() {
 	if(sel.selectedIndex == 4 || sel.selectedIndex == 6) enchMulti += ((i = Number(get("ender_slayer").value))>0)?ench3[i-1]:0;
 	enchMulti += ((mobMaxHealth - mobHealth)/mobMaxHealth)*(Number(get("execute").value) * 0.2);
 	enchMulti += Number(get("first_strike").value) * 0.25;
-	enchMulti += ((mobHealth-playerHealth)/playerHealth)*Number(get("giant_killer").value) * 0.1;
+	enchMulti += Math.min(((mobHealth-playerHealth)/playerHealth)*Number(get("giant_killer").value) * 0.1, Number(get("giant_killer").value)*0.05);
 	if(sel.selectedIndex == 5) enchMulti += Number(get("impaling").value) * 0.25;
 	enchMulti += (mobHealth/mobMaxHealth)*Number(get("prosecute").value) * 0.1;
 	enchMulti += ((i = Number(get("sharpness").value))>0)?ench2[i-1]:0;
